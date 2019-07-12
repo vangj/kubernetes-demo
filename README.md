@@ -35,3 +35,9 @@ To get to the dashboard.
 ```bash
 minikube dashboard
 ```
+
+# helm
+
+```bash
+brew install kubernetes-helm
+```
