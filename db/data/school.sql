@@ -3,22 +3,23 @@ create table if not exists school (
   name varchar(255) not null,
   primary key(id)
 );
-insert into school(name) values
-  ('George Washington School'),
-  ('Thomas Jefferson School');
+insert into school(id, name) values
+  (1, 'George Washington School'),
+  (2, 'Thomas Jefferson School');
 
 create table if not exists course (
   id int not null auto_increment,
   room varchar(10) not null,
+  school_id int not null,
   teacher_id int not null,
   subject varchar(255) not null,
   start_time varchar(255) not null,
   stop_time varchar(255) not null,
   primary key(id)
 );
-insert into course(room, teacher_id, subject, start_time, stop_time) values 
-  ('3A', 1, 'World History', '9:00 AM', '10:00 AM'),
-  ('2B', 2, 'World History', '2:00 PM', '3:00 PM');
+insert into course(id, room, school_id, teacher_id, subject, start_time, stop_time) values 
+  (1, '3A', 1, 1, 'World History', '9:00 AM', '10:00 AM'),
+  (2, '2B', 2, 2, 'World History', '2:00 PM', '3:00 PM');
 
 create table if not exists teacher (
   id int not null auto_increment,

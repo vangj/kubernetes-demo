@@ -1,8 +1,40 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
-    Welcome to {{ title }}!
+    {{ title }}
   </h1>
+</div>
+
+<div>
+  <select (change)="schoolSelected($event)">
+    <option value="-1">Select School</option>
+    <option value="{{school.id}}" *ngFor="let school of schools">
+      {{school.name}}
+    </option>
+  </select>
+
+  <select (change)="courseSelected($event)" *ngIf="fCourses && fCourses.length > 0">
+    <option value="-1">Select Course</option>
+    <option value="{{course.id}}" *ngFor="let course of fCourses">
+      {{course.subject}}
+    </option>
+  </select>
+
+  <select (change)="studentSelected($event)" *ngIf="fStudents && fStudents.length > 0">
+    <option value="-1">Select Student</option>
+    <option value="{{student.id}}" *ngFor="let student of fStudents">
+      {{student.firstName}} {{student.lastName}}
+    </option>
+  </select>
+</div>
+
+<div>
+  <div *ngIf="teacher">
+    Professor {{teacher.firstName}} {{teacher.lastName}}
+  </div>
+  <div *ngIf="student && grade">
+    {{student.firstName}} {{student.lastName}} {{grade.grade}}
+  </div>
 </div>
 
 <router-outlet></router-outlet>

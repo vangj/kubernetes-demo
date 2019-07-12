@@ -9,6 +9,7 @@ export class Course {
   constructor(
     public readonly id: number,
     public readonly room: string,
+    public readonly schoolId: number,
     public readonly teacherId: number,
     public readonly subject: string,
     public readonly startTime: string,

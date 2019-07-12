@@ -31,7 +31,7 @@ export class DataService {
   public getCourses(): Observable<Array<Course>> {
     return this.getData(this.GET_COURSES)
       .pipe(
-        map(d => d.map(c => new Course(c.id, c.room, c.teacher_id, c.subject, c.start_time, c.stop_time)))
+        map(d => d.map(c => new Course(c.id, c.room, c.school_id, c.teacher_id, c.subject, c.start_time, c.stop_time)))
       );
   }
 
