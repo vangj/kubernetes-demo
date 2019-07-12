@@ -1,6 +1,6 @@
 # Intro
 
-* db: database project using MySQL
+* db: MySQL
 * fl: Flask
 * ng: Angular
 
